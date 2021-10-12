@@ -21,14 +21,19 @@ int ingresarDatosDiarios(EstadiaDiaria* ingresoDeTiempo,int lista){
 	retorno=0;
 
 	ingresoDeTiempo[lista].id=lista;
-	printf("hola");
+
 	initChar(ingresoDeTiempo[lista].nombreDuenio,"Ingrese el nombre del duenio: ");
 
-	initInt(&ingresoDeTiempo[lista].telefonoContacto,"Ingrese el telefono del dueño: ");
+	do{
+		initInt(&ingresoDeTiempo[lista].telefonoContacto,"Ingrese el telefono del dueño: ");
+	}while(ingresoDeTiempo[lista].telefonoContacto<=40000000);
 
 	initInt(&ingresoDeTiempo[lista].idPerro,"Ingrese el ID del perrito: ");
 
-	initInt(&ingresoDeTiempo[lista].fecha,"Ingrese la fecha: ");
+	do{
+		initInt(&ingresoDeTiempo[lista].fecha,"Ingrese la fecha: ");
+	}while(ingresoDeTiempo[lista].fecha<=0);
+
 
 	retorno=1;
 
