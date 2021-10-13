@@ -68,7 +68,7 @@ void mostrarEstadia(EstadiaDiaria* ingresoDeTiempo,int tamanio){
 	int i;
 	printf("    Nombre del dueño           Telefono         Fecha\n");
 	for(i=100000;i<100000+tamanio;i++){
-		printf("%6s %6d %8s\n",ingresoDeTiempo[i].nombreDuenio,ingresoDeTiempo[i].telefonoContacto,ingresoDeTiempo[i].fecha);
+		printf("%6s %6d %8d\n",ingresoDeTiempo[i].nombreDuenio,ingresoDeTiempo[i].telefonoContacto,ingresoDeTiempo[i].fecha);
 	}
 }
 
