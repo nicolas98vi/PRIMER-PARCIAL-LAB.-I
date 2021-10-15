@@ -47,3 +47,5 @@ void mostrarDatos(ePerro* perritos,EstadiaDiaria* estadia,int tamanio,int tamPer
 
 
 
+
+

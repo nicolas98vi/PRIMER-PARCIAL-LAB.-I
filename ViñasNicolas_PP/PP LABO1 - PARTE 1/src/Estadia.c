@@ -72,3 +72,42 @@ void mostrarEstadia(EstadiaDiaria* ingresoDeTiempo,int tamanio){
 	}
 }
 
+void ordenarPorFecha(EstadiaDiaria* estadia,int tamanio){
+	int i;
+	int j;
+
+	int auxiliarfecha;
+	int auxiliarID;
+	char auxiliarnombreDuenio[21];
+	int auxiliartelefonoContacto;
+	int auxiliaridPerro;
+
+	for(j=100000;j<100000+tamanio;j++){
+		for(i=100000;i<100000+tamanio;i++){
+				if(estadia[i].fecha<estadia[j].fecha && estadia[j].isEmpty==LLENO && estadia[i].isEmpty==LLENO){
+
+					auxiliarfecha=estadia[j].fecha;
+					estadia[j].fecha=estadia[i].fecha;
+					estadia[i].fecha=auxiliarfecha;
+
+					auxiliarID=estadia[j].id;
+					estadia[j].id=estadia[i].id;
+					estadia[i].id=auxiliarID;
+
+					strcpy(auxiliarnombreDuenio,estadia[j].nombreDuenio);
+					strcpy(estadia[j].nombreDuenio,estadia[i].nombreDuenio);
+					strcpy(estadia[i].nombreDuenio,auxiliarnombreDuenio);
+
+					auxiliartelefonoContacto=estadia[j].telefonoContacto;
+					estadia[j].telefonoContacto=estadia[i].telefonoContacto;
+					estadia[i].telefonoContacto=auxiliartelefonoContacto;
+
+					auxiliaridPerro=estadia[j].idPerro;
+					estadia[j].idPerro=estadia[i].idPerro;
+					estadia[i].idPerro=auxiliaridPerro;
+
+				}
+			}
+		}
+	mostrarEstadia(estadia, tamanio);
+}
